@@ -1,0 +1,30 @@
+[System]
+Name='distance_control'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=0
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='distmin'
+Range=[0 1]
+NumMFs=3
+MF1='perto':'gauss2mf',[0.000849 0 0.1 0.0316]
+MF2='+-':'gauss2mf',[0.1 0.263673469387755 0.1 0.396973469387755]
+MF3='longe':'gauss2mf',[0.1 0.631006308373996 0.1 1.01]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=3
+MF1='mf1':'trimf',[-0.4 0 0.4]
+MF2='mf2':'trimf',[0.1 0.5 0.9]
+MF3='mf3':'trimf',[0.6 1 1.4]
+
+[Rules]
