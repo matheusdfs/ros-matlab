@@ -1,5 +1,8 @@
-turtle_reset = rossvcclient('/reset')
-call(turtle_reset);
+% PID Controller to fix error in direction and distance of the objectives
+% of the robot on TurtleSim
+
+reset_world_service_turtlesim();
+
 twist = rosmessage('geometry_msgs/Twist');
 objetivo = rosmessage('geometry_msgs/Twist');
 pub = rospublisher('/turtle1/cmd_vel');

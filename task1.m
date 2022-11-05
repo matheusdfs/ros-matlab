@@ -1,4 +1,6 @@
-% Controle Proporcional(Integral/Derivativo) da Tartaruga no TurtleSim
+% Movimentation in TurtleSim using keyboard
+reset_world_service_turtlesim();
+
 t0 = clock;
  
 twist = rosmessage('geometry_msgs/Twist');
